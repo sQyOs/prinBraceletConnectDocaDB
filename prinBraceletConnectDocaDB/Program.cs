@@ -147,7 +147,6 @@ namespace prinBraceletConnectDocaDB
                             wrLine(connection.State.ToString());
                             foreach (DataRow dataRow in dataTable.Rows)
                             {
-                                Console.WriteLine(dataTable.Rows.GetEnumerator());
                                 foreach (DataColumn column in dataTable.Columns)
                                 {
                                     Console.WriteLine(column.ColumnName + " " + dataRow[column]);
@@ -162,7 +161,7 @@ namespace prinBraceletConnectDocaDB
                                 strPhone = spaceKiller(dataTable.Rows[dataTable.Rows.Count - 1].ItemArray[4].ToString());
                                 strIb = spaceKiller(dataTable.Rows[dataTable.Rows.Count - 1].ItemArray[5].ToString());
                                 DateTime dateIn = dateTime.AddSeconds(Convert.ToInt32(spaceKiller(dataTable.Rows[dataTable.Rows.Count - 1].ItemArray[6].ToString())));
-                                DateTime dBir = dateTime.AddSeconds(Convert.ToInt32(spaceKiller(dataTable.Rows[dataTable.Rows.Count - 1].ItemArray[8].ToString())));
+                                DateTime dBir = dateTime.AddSeconds(Convert.ToInt32(spaceKiller(dataTable.Rows[dataTable.Rows.Count - 1].ItemArray[8].ToString())) + 3600);
                                 strSex = dataTable.Rows[dataTable.Rows.Count - 1].ItemArray[9].ToString();
 
                                 strDateIn = dateIn.ToString("dd.MM.yyyy") + " " + dateIn.ToString("HH:mm");
